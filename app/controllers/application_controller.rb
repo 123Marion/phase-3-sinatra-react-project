@@ -21,7 +21,13 @@ class ApplicationController < Sinatra::Base
   #quotes
   get "/quotes" do
     quotes=Quote.all
-    quotes.to_json(include: :comments, include: :users)
+    quotes.to_json
+  end
+
+  #get each quote and owner
+  get "/quotes/:id" do
+    quote= Quote.find(params[:id])
+    quote.to_json(include: {comments: {include: :user}})
   end
 
   post "/quotes" do

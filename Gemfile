@@ -28,6 +28,10 @@ gem "sinatra-activerecord", "~> 2.0"
 # https://github.com/ruby/rake
 gem "rake", "~> 13.0"
 
+# Used to generate seed data
+# https://github.com/faker-ruby/faker
+gem "faker", "~> 2.18"
+
 # Provides functionality to interact with a SQLite3 database
 gem "sqlite3", "~> 1.4"
 

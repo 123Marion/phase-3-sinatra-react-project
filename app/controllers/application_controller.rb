@@ -21,7 +21,7 @@ class ApplicationController < Sinatra::Base
   #quotes
   get "/quotes" do
     quotes=Quote.all
-    quotes.to_json
+    quotes.to_json(include: :comments, include: :users)
   end
 
   post "/quotes" do

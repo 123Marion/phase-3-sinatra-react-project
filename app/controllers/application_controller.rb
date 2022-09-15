@@ -50,6 +50,8 @@ class ApplicationController < Sinatra::Base
       comments = Comment.create(
        comment: params[:comment],
        like: params[:like]
+       user_id: params[:user_id]
+       quote_id: params[:quote_id]
      )
      comments.to_json
    end

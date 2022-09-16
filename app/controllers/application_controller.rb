@@ -53,7 +53,7 @@ class ApplicationController < Sinatra::Base
        user_id: params[:user_id],
        quote_id: params[:quote_id]
      )
-     comments.to_json
+     comments.to_json(include: :user)
    end
  
    patch "/comments/:id" do
